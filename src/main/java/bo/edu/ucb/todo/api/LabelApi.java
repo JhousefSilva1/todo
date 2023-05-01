@@ -7,6 +7,7 @@ import bo.edu.ucb.todo.dto.ResponseDto;
 
 import org.springframework.web.bind.annotation.*;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @RestController
@@ -15,8 +16,11 @@ public class LabelApi {
 
     private LabelBl labelBl;
 
+    private List<LabelDto> labels = new ArrayList<>();
     public LabelApi(LabelBl labelBl) {
+
         this.labelBl = labelBl;
+
     }
 
     /**
@@ -101,7 +105,9 @@ public class LabelApi {
             response.setErrorMessage("Label not found");
             return response;
         } else {
+
             this.labelBl.updateLabelById(idLabel, newLabel);
+            label.setIsDelete(newLabel.getIsDelete());
             // Si existe retornamos el elemento
             response.setCode("0000");
             response.setResponse(label);

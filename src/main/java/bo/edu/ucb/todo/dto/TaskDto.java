@@ -4,10 +4,29 @@ import java.util.*;
 
 public class TaskDto {
     private Integer taskId;
+    private String title;
     private String description;
     private boolean isDone;
+    private boolean isDelete;
+
+    public boolean getIsDelete() {
+        return isDelete;
+    }
+
+    public void setIsDelete(boolean visible) {
+        isDelete = visible;
+    }
+
     private Date date;
     private List<Integer> labelIds;
+
+    public String getTitle() {
+        return title;
+    }
+
+    public void setTitle(String title) {
+        this.title = title;
+    }
 
     public TaskDto() {
     }
@@ -58,9 +77,11 @@ public class TaskDto {
         return "{" +
                 " taskId='" + getTaskId() + "'" +
                 ", description='" + getDescription() + "'" +
+                ", title='" + getTitle() + "'" +
                 ", date='" + getDate() + "'" +
                 ", labelIds='" + getLabelIds() + "'" +
                 ", isDone='" + getIsDone() + "'" +
+                ", isDelete='" + getIsDelete() + "'" +
                 "}";
     }
 

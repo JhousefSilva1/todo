@@ -3,6 +3,15 @@ package bo.edu.ucb.todo.dto;
 public  class LabelDto {
     private Integer labelId;
     private String name;
+    private boolean isDelete;
+
+    public boolean getIsDelete() {
+        return isDelete;
+    }
+
+    public void setIsDelete(boolean visible) {
+        isDelete = visible;
+    }
 
     public LabelDto() {
     }
@@ -31,9 +40,10 @@ public  class LabelDto {
     @Override
     public String toString() {
         return "{" +
-            " labelId='" + getLabelId() + "'" +
-            ", name='" + getName() + "'" +
-            "}";
+                " labelId='" + getLabelId() + "'" +
+                ", name='" + getName() + "'" +
+                ", isDelete='" + getName() + "'" +
+                "}";
     }
 
 }
