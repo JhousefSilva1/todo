@@ -8,6 +8,7 @@ Content-Type: application/json
 }
 
 ### Este endpoint deberia retornar dos tokens.
+#POST http://localhost:9999/api/v1/auth/login
 POST http://localhost:9999/api/v1/auth/login
 Content-Type: application/json
 
@@ -16,10 +17,24 @@ Content-Type: application/json
   "password": "12345678"
 }
 
+
+### Este endpoint deberia retornar dos tokens.
+#POST http://localhost:9999/api/v1/auth/login
+POST localhost:9999:9999/api/v1/auth/login
+Content-Type: application/json
+
+{
+  "username": "jhousef",
+  "password": "1234567890"
+}
+
+
+
+
 ### Enpoint para refrescar el token
 POST http://localhost:9999/api/v1/auth/refresh
 Content-Type: application/json
 
 {
-    "refreshToken": ""
+  "refreshToken": ""
 }
