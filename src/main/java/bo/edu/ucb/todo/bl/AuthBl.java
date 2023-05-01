@@ -21,11 +21,22 @@ public class AuthBl {
             tokenDto.setAuthToken(generateToken(100, "Juan Perez", "AUTH", 30));
             tokenDto.setRefreshToken(generateToken(100, "Juan Perez", "REFRESH", 60));
             return tokenDto;
-        } else {
+        } else
+        if ("jhousef".equals(login.getUsername()) &&
+                "1234567890".equals(login.getPassword())) {
+            TokenDto tokenDto = new TokenDto();
+            tokenDto.setAuthToken(generateToken(100, "Jose Pozo", "AUTH", 30));
+            tokenDto.setRefreshToken(generateToken(100, "Jose Pozo", "REFRESH", 60));
+            return tokenDto; }
+        else{
             return null;
         }
 
     }
+
+//    crear un nuevo usuario
+
+
 
     private String  generateToken(Integer userId, String name, String type, int minutes) {
         try {
@@ -43,6 +54,9 @@ public class AuthBl {
             throw new RuntimeException("Error al generar el token", exception);
         }
     }
+
+
+
 
     public boolean validateToken(String token) {
         if(token != null && token.startsWith("Bearer ")) {

@@ -5,6 +5,7 @@ import java.util.*;
 public class TaskDto {
     private Integer taskId;
     private String description;
+    private boolean isDone;
     private Date date;
     private List<Integer> labelIds;
 
@@ -44,15 +45,23 @@ public class TaskDto {
         this.labelIds = labelIds;
     }
 
+    public boolean getIsDone() {
+        return isDone;
+    }
+
+    public void setIsDone(boolean done) {
+        isDone = done;
+    }
 
     @Override
     public String toString() {
         return "{" +
-            " taskId='" + getTaskId() + "'" +
-            ", description='" + getDescription() + "'" +
-            ", date='" + getDate() + "'" +
-            ", labelIds='" + getLabelIds() + "'" +
-            "}";
+                " taskId='" + getTaskId() + "'" +
+                ", description='" + getDescription() + "'" +
+                ", date='" + getDate() + "'" +
+                ", labelIds='" + getLabelIds() + "'" +
+                ", isDone='" + getIsDone() + "'" +
+                "}";
     }
 
 
